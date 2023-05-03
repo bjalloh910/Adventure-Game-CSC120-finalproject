@@ -2,42 +2,68 @@ import java.util.ArrayList;
 
 public class Location{
 
-protected  String Road_Name; 
-protected  String Road_Adress;
-ArrayList<Items> Inventory;
+//setting the attributes 
+private String name;
+private String description;
+private ArrayList<Items> inventory;
 
-public Location(String Road_Name, String Road_Adress) {
-    this.Road_Name = Road_Adress; 
-    this.Road_Adress =  Road_Adress;
-    this.Inventory = new ArrayList<Items>(Inventory) ;
+//Constructor 
+public Location(String name, String description, ArrayList<Items> inventory) {
+    this.name = name; //name of location
+    this.description =  description; //describe the location
+    this.inventory = inventory; //The items that exist in the location
+    
     
     
 } 
-public Location() {
-    this("<Name Unknown>", "<Address Unknown>");
+//Getter methods
+public String getName() {
+    return this.name;
+}
+
+public String getDescription() {
+    return this.description;
+}
+
+public ArrayList<Items> getInventory(){
+    return this.inventory;
+}
+
+//Setter methods 
+public void setName(String name){
+    this.name = name;
+}
+
+public void setDescription(String description){
+    this.description = description;
+}
+
+public void setInventory(ArrayList<Items> inventory){
+    this.inventory = new ArrayList<Items>(inventory);
+}
+
+//Inventory methods 
+//method to add items 
+public void addItem(Items item){
+    this.inventory.add(item);
+}
+
+//method to remove items 
+public void removeItem(Items item){
+    this.inventory.remove(item);
+}
+
+//method to see if player has an item or not (you're checking to see if it's true or not so boolean)
+public boolean hasItem(Items item){
+    return this.inventory.contains(item);
+}
+
+public String toString(){
+    return name + " " + description + " " + inventory;
 }
 
 
-
-
-
-
-
-
-
-
-public String getRoad_Name() {
-    return this.Road_Name;
-}
-
-public String getAddress() {
-return this.Road_Adress;
-}
-
-
-
-
-
+ 
 
 
 
@@ -46,10 +72,21 @@ return this.Road_Adress;
 
 
 public static void main(String[] args) {
+//adding the location name, and description and inventory 
+Location location1 = new Location("Grove", "A dense grove with tall trees and exotic animals", new ArrayList<Items>());
 
 
+//adding some items to test out
+Items sword = new Items("Sword", "a very sharp sword", false, 0);
+
+location1.addItem(sword);
 
 
+System.out.println("Location 1:");
+System.out.println("Name: " + location1.getName());
+System.out.println("Description:" + location1.getDescription());
+System.out.println("Inventory: " + location1.getInventory());
 }
 
 }
+
