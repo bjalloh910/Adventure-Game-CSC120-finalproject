@@ -34,50 +34,26 @@ public class Castle extends Location {
         }
         // Otherwise, if the player wins the fight they obtain 3/3 Keys needed to get the Golden Crown at the Castle
         else {
-            System.out.println("");
+            System.out.println("You have slayed the dragon. \nYou see the key inside his slimey mouth and grab because you have no choice");
+            player.addItem(new Items("Item: key", "Description: Description: 2/3 Ancient Key, what could it possibly be used for?", false, 0));
+
+           // Displays inventory now showing that they have the Key
+           System.out.println("Your inventory now contains:");
+
+           for (Items item : player.getInventory()) {
+           System.out.println(item.getItem_name() + " - " + item.getItem_description());
+            
+           }
+           break;
+        }
+        } // Add an else if statement to handle other user inputs
+        else if (userInput.equalsIgnoreCase("2")){
+            System.out.println("You chose to run away from the" + monster.getName()+ "Game over! :/");
+            break;
+          
+            }
         }
         }
-        }
-
-    }
-    
-    //when t
-    
-
-
-    
-
-
-
-    
-    
-    
-        
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -85,9 +61,14 @@ public class Castle extends Location {
 
     public static void main(String[] args) {
 
+    Player player = new Player("Bintu", 100, 10)
 
+    Castle castle = new Castle(player);
 
+    castle.start(player);
     
     }
+
+
 
 }
