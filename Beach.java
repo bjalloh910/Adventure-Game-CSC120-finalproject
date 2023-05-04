@@ -23,7 +23,7 @@ public class Beach extends Location{
         if (userInput.equalsIgnoreCase("1"));
             System.out.print("OH NO!! You attempt to run away but the " + monster.getName() + "is too fast and manages to grab you.:/");
             break;
-        } else if (userInput.equalsIgnoreCase("2"));
+      }
     }
   
     

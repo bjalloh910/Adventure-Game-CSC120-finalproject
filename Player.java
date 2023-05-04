@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Player {
@@ -49,10 +50,10 @@ public class Player {
 }
 
     //method to remove items 
-    public void removeItem(Items item){
-        this.inventory.remove(item);
-}
-
+    public void removeItem(String itemName) {
+        this.inventory.removeIf(item -> item.getItem_name().equals(itemName));
+    }
+      
     //method to see if player has an item or not (you're checking to see if it's true or not so boolean)
     public boolean hasItem(Items item){
         return this.inventory.contains(item);
@@ -60,4 +61,38 @@ public class Player {
     public String toString(){
         return name + " " + description + " " + inventory;
 }
+    public void consume() {
+    // Prompt the player to choose an item to consume
+    System.out.println("Choose an item to consume:");
+    for (Items item : inventory) {
+        System.out.println(item.getItem_name());
+    }
+    Scanner input = new Scanner(System.in);
+    String itemName = input.nextLine();
+
+    // Find the chosen item in the inventory
+    Items chosenItem = null;
+    for (Items item : inventory) {
+        if (item.getItem_name().equalsIgnoreCase(itemName)) {
+            chosenItem = item;
+            break;
+        }
+    }
+
+    // Consume the item if it is found
+    if (chosenItem != null) {
+        if (chosenItem.getDigestable()) {
+            int energyValue = chosenItem.getEnergy_Value();
+            setEnergy(getEnergy() + energyValue);
+            System.out.println("You consumed " + chosenItem.getItem_name() + " and restored " + energyValue + " energy.");
+            removeItem(chosenItem.getItem_name());
+        } else {
+            System.out.println("You can't consume " + chosenItem.getItem_name() + "!");
+        }
+    } else {
+        System.out.println("You don't have that item!");
+    }
 }
+}
+
+

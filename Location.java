@@ -62,6 +62,13 @@ public String toString(){
     return name + " " + description + " " + inventory;
 }
 
+public void checkForKeyOne(Player player) {
+    Items key = new Items("Item: Key", "Description: 1/3 Ancient Key, what could it possibly be used for?", false, 0);
+    if (this.hasItem(key)) {
+        System.out.println("You found one of the keys to the Golden Crown, continue your adventure!");
+        Beach beach = new Beach(player);
+    }
+}
 
  
 
