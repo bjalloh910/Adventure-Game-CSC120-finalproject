@@ -95,5 +95,16 @@ System.out.println("Description:" + location1.getDescription());
 System.out.println("Inventory: " + location1.getInventory());
 }
 
+
 }
+
+
+
+ 
+
+
+
+
+
+
 

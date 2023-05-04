@@ -8,9 +8,10 @@ public class Groves extends Location {
 
     public Groves(Player player) {
         super("Grove", "Groves with lots of trees and singing birds", new ArrayList<Items>());
-        
         this.monster = new Monster("Bear", 20, 5);
+    }
 
+        public void start(Player player) {
         System.out.println("\nYou are in a Grove \nYou look around and find a path with a fork in it. \nLeft or Right?");
 
         Scanner Groves_locations = new Scanner(System.in);
@@ -48,6 +49,7 @@ public class Groves extends Location {
 
                 
                 }
+            
             // If the player picks choice 2, they find blueberries on the path and pick them
             } else if (userInput.equalsIgnoreCase("2")) {
                 System.out.println("You go right and find some blueberries...will these be useful?");
@@ -86,7 +88,7 @@ public class Groves extends Location {
                         if (player.getEnergy() > 0 ) {
                             System.out.println("You obtained a key from around it's neck.");
                             player.addItem(new Items("Item: Key", "Description: 1/3 Ancient Key, what could it possibly be used for?", false, 0));
-                            
+                             
                             // Displays inventory now showing that they have the Key
                             System.out.println("Your inventory now contains:");
         
@@ -104,52 +106,46 @@ public class Groves extends Location {
                         player.removeItem("Item: Blueberries");
                         player.addItem(new Items("Item: Key", "Description: 1/3 Ancient Key, what could it possibly be used for?", false, 0));
 
-
                         // Displays inventory now showing that they have the Key
                         System.out.println("Your inventory now contains:");
 
                         for (Items item : player.getInventory()) {
                         System.out.println(item.getItem_name() + " - " + item.getItem_description());
+
+                        System.out.println("You have made progress on your journey adventurer... \nYou decide to go to the Beach in search for the next key! \n 1. Continue");
+                        String userInput3 = Groves_locations.nextLine();
+
+                        if (userInput3.equalsIgnoreCase("1")) {
+                            Beach beach = new Beach(player);
+                            beach.start(player);
+                        } else {
+                            System.out.println("Invalid choice, try again!");
+                        }
+
                          }
                     }
                 }
                 } else {
                     System.out.println("Invalid choice, try again!");
-
+                }
             }
 
-                
-
-        }       
+    
+        }
     }
     
     
-    
-
-
-
-
-     
-    
-
-
-
-
-
-
-
-
-
-
-    public static void main(String[] args){
-
-    
-    }
 
 
         
 
-}
+
+
+    
+
+        
+
+
 
 
 

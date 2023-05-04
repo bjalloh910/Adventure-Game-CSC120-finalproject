@@ -17,6 +17,7 @@ public class Player {
         this.description = description;
     }
 
+
     public int getEnergy() {
         return energy;
     }
@@ -93,6 +94,6 @@ public class Player {
         System.out.println("You don't have that item!");
     }
 }
-}
 
+}
 

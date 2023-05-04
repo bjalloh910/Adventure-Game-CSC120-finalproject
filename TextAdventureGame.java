@@ -14,7 +14,8 @@ public class TextAdventureGame {
         ArrayList<Items> playerInventory = new ArrayList<Items>();
         Player player = new Player(playerName, "Main character", 100, 10, playerInventory);
         Groves grove = new Groves(player);
-      
-}
+        grove.start(player);
 
-}
+        
+        }
+    }
