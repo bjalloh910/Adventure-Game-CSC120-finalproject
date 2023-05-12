@@ -22,7 +22,7 @@ public class Beach extends Location {
   
     // If a player picks choice 1 they won't be able to actually get away so they have to try to fight back
     if (userInput.equalsIgnoreCase("1")) {
-        System.out.print("OH NO!! \nYou attempt to run away but the " + monster.getName() + " is too fast and manages to grab you. :(");
+        System.out.print("OH NO!! \nYou attempt to run away but the " + monster.getName() + " is too fast and manages to grab you. :( ");
         
         // Initializes fight instance between the player and monster
         Fight fight = new Fight(player, monster);
@@ -43,7 +43,17 @@ public class Beach extends Location {
             for (Items item : player.getInventory()) {
                 System.out.println(item.getItem_name() + " - " + item.getItem_description());
             }
-            break;
+            
+            System.out.println("You have made progress on your journey adventurer... \nYou decide to go to the Castle in search for the next key! \n1. Continue");
+                        String userInput3 = Beach_location.nextLine();
+
+                        if (userInput3.equalsIgnoreCase("1")) {
+                            Castle castle = new Castle(player);
+                            castle.start(player);
+                            break;
+                        } else {
+                            System.out.println("Invalid choice, try again!");
+                        }
         } 
     } 
     // Add an else if statement to handle other user inputs
@@ -66,11 +76,20 @@ public class Beach extends Location {
 
             for (Items item : player.getInventory()) {
             System.out.println(item.getItem_name() + " - " + item.getItem_description());
-             
                 }
-            break;
+            
+            System.out.println("You have made progress on your journey adventurer... \nYou decide to go to the Castle in search for the next key! \n1. Continue");
+                        String userInput3 = Beach_location.nextLine();
+
+                        if (userInput3.equalsIgnoreCase("1")) {
+                            Castle castle = new Castle(player);
+                            castle.start(player);
+                            break;
+                        } else {
+                            System.out.println("Invalid choice, try again!");
+                        }
          } 
-            }    else {
+            } else {
         System.out.println("Invalid choice, please try again.");
     }
 }
