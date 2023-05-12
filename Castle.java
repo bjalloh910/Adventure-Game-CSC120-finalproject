@@ -10,11 +10,6 @@ public class Castle extends Location {
     this.monster = new Monster("Dragon", 80, 10);
    }
 
-    /*
-     * Start the Castle location to encounter Dragon and get the golden crown
-     * @ param player the player 
-     */
-
     public void start(Player player){
      System.out.println("You are walking towards the castle. \nThe closer you get you start to see a huge shadow. \nOMG!! It's a huge dragon sleeping while guarding the gates");
      Scanner Castle_location = new Scanner(System.in);

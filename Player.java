@@ -46,37 +46,22 @@ public class Player {
         this.inventory = new ArrayList<Items>(inventory);
 }
 
-    /*
-    * Add items to the player's inventory
-    */
     public void addItem(Items item){
         this.inventory.add(item);
 }
 
-   
-    /*
-    * Removes items from the player's inventory
-    */
+    //method to remove items 
     public void removeItem(String itemName) {
         this.inventory.removeIf(item -> item.getItem_name().equals(itemName));
     }
       
-    /*
-    * Checks if the player's inventory has item
-    */
+    //method to see if player has an item or not (you're checking to see if it's true or not so boolean)
     public boolean hasItem(Items item){
         return this.inventory.contains(item);
 }
-
-    /*
-    * To string method for the Player's inventory
-    */
     public String toString(){
         return name + " " + description + " " + inventory;
 }
-    /*
-    * Adds item's energy to the player's 
-    */
     public void consume() {
     // Prompt the player to choose an item to consume
     System.out.println("Choose an item to consume:");

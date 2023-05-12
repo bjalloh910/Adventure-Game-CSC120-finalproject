@@ -10,12 +10,6 @@ public class Groves extends Location {
         this.monster = new Monster("Bear", 20, 5);
     }
 
-    
-    /*
-     * Start the groves location to encounter Bear and maybe pick up blueberries if they choose
-     * @ param player the player 
-     */
-
     public void start(Player player) {
         System.out.println("\nYou are in a Grove \nYou look around and find a path with a fork in it. \nLeft or Right?");
 
