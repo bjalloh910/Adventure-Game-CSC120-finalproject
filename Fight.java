@@ -10,6 +10,10 @@ public class Fight {
         this.monster = monster;
     }
 
+     /*
+      * The first turn to attack from the player and the monster that substracts attack_dmg from each 
+      */
+
     private void turn() {
         System.out.println("What do you want to do?");
         System.out.println("1. Attack with your sword");
@@ -55,6 +59,10 @@ public class Fight {
         }
     }
 
+     /*
+      * Sets a 50 percent chance that the player would be able to sucessfully use the counter ability which adds their attack_dmg and the monster's and inflict more damage 
+      */
+
     private void counter() {
         Random random = new Random();
         int successRate = random.nextInt(100);
@@ -69,6 +77,10 @@ public class Fight {
             player.setEnergy(player.getEnergy() - totalDamage);
         }
     }
+
+     /*
+      * Starts fight between player and Monster
+      */
 
     public void start() {
         System.out.println("A wild " + monster.getName() + " appeared!");

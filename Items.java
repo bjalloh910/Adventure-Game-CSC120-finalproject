@@ -55,11 +55,21 @@ public class Items {
 
 
 
-
+/* 
+ * methods 
+ * 
+ * check if it is digestable or not 
+ * 
+ * 
+ * 
+ * if eatable then assign an energy value
+ * 
+ */
 
  public static void main(String[] args) {
 
-    
+    Items Peaches = new Items ("Peaches", "It is a delicious smelling fruit!", true, 10) ;
+    System.out.println(Peaches.item_name); 
     
 
  }   

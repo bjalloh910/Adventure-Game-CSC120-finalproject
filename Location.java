@@ -43,25 +43,40 @@ public void setInventory(ArrayList<Items> inventory){
 }
 
 //Inventory methods 
-//method to add items 
+
+/*
+  * Add items to the location inventory
+  */
 public void addItem(Items item){
     this.inventory.add(item);
 }
 
-//method to remove items 
+
+ /*
+  * Remove items from the location inventory
+  */
+
 public void removeItem(Items item){
     this.inventory.remove(item);
 }
 
-//method to see if player has an item or not (you're checking to see if it's true or not so boolean)
+/*
+  * Checks if it has item in the location inventory
+  */
 public boolean hasItem(Items item){
     return this.inventory.contains(item);
 }
 
+/*
+  * To String method for the location inventory
+  */
 public String toString(){
     return name + " " + description + " " + inventory;
 }
 
+/*
+  * Checks if the player can go to the Beach class
+  */
 public void checkForKeyOne(Player player) {
     Items key = new Items("Item: Key", "Description: 1/3 Ancient Key, what could it possibly be used for?", false, 0);
     if (this.hasItem(key)) {

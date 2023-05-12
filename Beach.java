@@ -10,6 +10,10 @@ public class Beach extends Location {
       this.monster = new Monster("Giant Crab", 40, 2);
     }
 
+     /*
+      * Start the beach location and encounters Giant Crab Monster 
+      * @ param player the player 
+      */
       public void start(Player player) {
       System.out.println("You are on the beach \nYou see a giant crab walking out the sea towards you");
 
