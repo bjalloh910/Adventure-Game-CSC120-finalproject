@@ -43,7 +43,7 @@ public void setInventory(ArrayList<Items> inventory){
 }
 
 //Inventory methods 
-//method to add items 
+
 /*
  * Add items to the location inventory
  */
@@ -51,7 +51,7 @@ public void addItem(Items item){
     this.inventory.add(item);
 }
 
-//method to remove items 
+
 /*
  * Remove items from the location inventory
  */
@@ -59,7 +59,6 @@ public void removeItem(Items item){
     this.inventory.remove(item);
 }
 
-//method to see if player has an item or not (you're checking to see if it's true or not so boolean)
 /*
  * Checks if it has item in the location inventory
  */

@@ -53,7 +53,7 @@ public class Player {
         this.inventory.add(item);
 }
 
-    //method to remove items 
+   
     /*
     * Removes items from the player's inventory
     */
@@ -61,7 +61,6 @@ public class Player {
         this.inventory.removeIf(item -> item.getItem_name().equals(itemName));
     }
       
-    //method to see if player has an item or not (you're checking to see if it's true or not so boolean)
     /*
     * Checks if the player's inventory has item
     */
